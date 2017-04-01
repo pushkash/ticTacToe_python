@@ -1,17 +1,6 @@
+# Python 2.7
+
 import sys
-
-#possible options of win-rows
-#1-2-3
-#4-5-6
-#7-8-9
-
-#1-4-7
-#2-5-8
-#3-6-9
-
-#1-5-9
-#3-5-7
-
 
 board = {'1': 1, '2': 2, '3': 3,
 	     '4': 4, '5': 5, '6': 6,
@@ -63,29 +52,28 @@ def fillSquare(sign, board):
 
 def checkFullRow(board):
 
-	if board['1'] == board['2'] and board['2'] == board['3']:
-		print board['1'] == board['2'] == board['3']
+	if board['1'] == board['2'] == board['3']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['4'] == board['5'] and board['5'] == board['6']:
+	elif board['4'] == board['5'] == board['6']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['7'] == board['8'] and board['8'] == board['9']:
+	elif board['7'] == board['8'] == board['9']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['1'] == board['4'] and board['4'] == board['7']:
+	elif board['1'] == board['4'] == board['7']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['2'] == board['5'] and board['5'] == board['8']:
+	elif board['2'] == board['5'] == board['8']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['3'] == board['6'] and board['6'] == board['9']:
+	elif board['3'] == board['6'] == board['9']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['1'] == board['5'] and board['5'] == board['9']:
+	elif board['1'] == board['5'] == board['9']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
-	elif board['3'] == board['5'] and board['5'] == board['7']:
+	elif board['3'] == board['5'] == board['7']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
 
@@ -116,3 +104,4 @@ while True:
 
 
 
+s
