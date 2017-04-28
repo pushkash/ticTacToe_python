@@ -1,6 +1,7 @@
-# Python 2.7
+#/usr/bin/python2.7
 
 import sys
+import random
 
 board = {'1': 1, '2': 2, '3': 3,
 	     '4': 4, '5': 5, '6': 6,
@@ -56,29 +57,54 @@ def checkFullRow(board):
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
 	elif board['4'] == board['5'] == board['6']:
-		print 'Sign ' + board['1'] + ' won'
+		print 'Sign ' + board['4'] + ' won'
 		sys.exit()
 	elif board['7'] == board['8'] == board['9']:
-		print 'Sign ' + board['1'] + ' won'
+		print 'Sign ' + board['7'] + ' won'
 		sys.exit()
 	elif board['1'] == board['4'] == board['7']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
 	elif board['2'] == board['5'] == board['8']:
-		print 'Sign ' + board['1'] + ' won'
+		print 'Sign ' + board['2'] + ' won'
 		sys.exit()
 	elif board['3'] == board['6'] == board['9']:
-		print 'Sign ' + board['1'] + ' won'
+		print 'Sign ' + board['3'] + ' won'
 		sys.exit()
 	elif board['1'] == board['5'] == board['9']:
 		print 'Sign ' + board['1'] + ' won'
 		sys.exit()
 	elif board['3'] == board['5'] == board['7']:
-		print 'Sign ' + board['1'] + ' won'
+		print 'Sign ' + board['3'] + ' won'
 		sys.exit()
+
+def oppositeSide(sign, board):
+
+	if board['5'] != 'X' and board['5'] != '0':
+		board['5'] = sign
+
+	else:
+		while True:
+			
+			square = random.randint(1, 9)
+
+			square = str(square)
+			
+			if board[square] != 'X' and board[square] != '0':
+				board[square] = sign
+				break
+			else:
+				continue
+
+	return board
 
 
 sign = chooseSide()
+
+if sign == 'X':
+	enemySign = '0'
+else:
+	enemySign = 'X'
 
 boardDraw(board)
 
@@ -95,13 +121,9 @@ while True:
 
 	boardDraw(board)
 
+	oppositeSide(enemySign, board)
+
+	boardDraw(board)
+
 	count += 1
 
-
-
-
-
-
-
-
-s
