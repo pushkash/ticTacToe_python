@@ -84,6 +84,11 @@ def oppositeSide(sign, board):
 		board['5'] = sign
 
 	else:
+
+		#TO-DO
+		#Check 2 signs in a raw to avoid losing caused by random number
+
+
 		while True:
 			
 			square = random.randint(1, 9)
